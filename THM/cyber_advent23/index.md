@@ -2,6 +2,79 @@ Apologies, in advance if somoe of the files here are incomplete also the photos.
 
 
 
+day 1
+- learned about natural language processing, 
+- learned about prompt injection attacls
+- learning how to defend against this attacks
+
+day 2
+- learned how data science can be applied in cybersecurity
+- learned about pandas and numpy module for data processing
+- installed and used jupyter notebook
+
+day 3
+- learned a new tool crunch to generate a pin wordlist
+- using hydra to brute force a log in with PIN
+
+day 4
+- learned about a new wordlist creator tool cewl
+- this tool can scrape website and add it to a wordlist
+- successfully logged in via bruteforce using wfuzz to get flag
+
+day 5
+- navigating a DOS legacy system
+- understand the importance of file signatures and magic bytes for data recovery
+
+day 6
+- understanding buffer overflow
+- exploiting a browser based game written in C using this technique
+
+
+day 7
+- analyse logs in a linux web server
+- text processing skill using 'cut', 'awk', 'grep', 'sort', 'uniq' etc
+
+
+
+day 8
+- analysing artifacts
+- recover deleted digital artifacts
+- verify integrity of drive
+
+
+day 9
+- foundation of malware analysis
+- Fundamental of .NET binaries
+- Hands-on experience using the dnSpy tool
+- learned about the methodolgy for analysing malware 
+
+day 10
+- learn and identify SQL Injection Vulnerabilities
+- Exploiting stacked queries into RCE
+- nlearned about the xp_cmdshell module of sql
+
+
+day 11 
+- Understanding Active Directory
+- Intro to Windows Hello for Business
+- Exploiting GenericWrite Privelege
+- How shadow credential attack works
+- exploiting the vulnerability with powerview, whisker, rubeus, evil-winrm 
+
+
+
+day 12
+- concept of defense in depth 
+- linux hardening (ssh and least of privileged as sudoer)
+- jenkins hardening and configuration ()
+
+
+day 13
+- learned honeypot tool pentbox
+- learned basic linux firewall configuration using ufw
+- 
+
+
 ::: two-panels
 ::: tree-panel
 ::: tree
