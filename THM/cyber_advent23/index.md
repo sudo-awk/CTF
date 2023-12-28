@@ -1,3 +1,7 @@
+Apologies, in advance if somoe of the files here are incomplete also the photos... Initially, I used cherrytree to take my notes but I didnt realized that cherrytree doesnt support exporting to markdown.. so I exported to html and then convert to  markdown .. though, I didnt get the results I want, I learned how to convert a batch to a different format using pandoc, also I've confirmed which note taking app I want, so it's still a good thing..  thank you for reading. 
+
+
+
 ::: two-panels
 ::: tree-panel
 ::: tree
