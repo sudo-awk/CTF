@@ -1,5 +1,5 @@
 ![Pasted image
-20240209021724.png](/home/aaron/Documents/thm/Pasted%20image%2020240209021724.png){.internal-embed
+20240209021724.png](https://github.com/sudo-awk/CTF/blob/main/THM/File_Inclusion-Path_Traversal/Pasted%20image%2020240209033647.png){.internal-embed
 touched="true"}
 
 ### File Inclusion Types
