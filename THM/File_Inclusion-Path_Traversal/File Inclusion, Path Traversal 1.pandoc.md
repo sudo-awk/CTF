@@ -5,7 +5,7 @@ touched="true"}
 ### File Inclusion Types
 
 ![Pasted image
-20240209021805.png](/home/aaron/Documents/thm/Pasted%20image%2020240209021805.png){.internal-embed
+20240209021805.png](https://github.com/sudo-awk/CTF/blob/main/THM/File_Inclusion-Path_Traversal/Pasted%20image%2020240209021724.png){.internal-embed
 touched="true"}
 
 ### PHP WRAPPER
@@ -14,7 +14,7 @@ touched="true"}
     Copy
 
 ![Pasted image
-20240209033546.png](/home/aaron/Documents/thm/Pasted%20image%2020240209033546.png){.internal-embed
+20240209033546.png]([/home/aaron/Documents/thm/Pasted%20image%2020240209033546.png](https://github.com/sudo-awk/CTF/blob/main/THM/File_Inclusion-Path_Traversal/Pasted%20image%2020240209021758.png)){.internal-embed
 touched="true"}
 
     Task 8 LFI2RCE - Wrappers
