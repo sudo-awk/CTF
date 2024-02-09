@@ -14,7 +14,7 @@ touched="true"}
     Copy
 
 ![Pasted image
-20240209033546.png]([https://github.com/sudo-awk/CTF/blob/main/THM/File_Inclusion-Path_Traversal/Pasted%20image%2020240209033546.png)){.internal-embed
+20240209033546.png]([https://github.com/sudo-awk/CTF/blob/main/THM/File_Inclusion-Path_Traversal/Pasted%20image%2020240209033546.png])){.internal-embed
 touched="true"}
 
     Task 8 LFI2RCE - Wrappers
