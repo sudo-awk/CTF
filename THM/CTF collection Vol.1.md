@@ -5,27 +5,28 @@ Note: All the challenges flag are formatted as THM{flag}, unless stated otherwis
 Answer the questions below
 High five!
 
-Task 2  What does the base said?
+### Task 2  What does the base said?
 Can you decode the following?
-
+```
 VEhNe2p1NTdfZDNjMGQzXzdoM19iNDUzfQ==
 
 --> echo -n "VEhNe2p1NTdfZDNjMGQzXzdoM19iNDUzfQ==" | base64 -d
 THM{ju57_d3c0d3_7h3_b453}%    >>> flag
+```
 
-Task 3  Meta meta
+### Task 3  Meta meta
 Meta! meta! meta! meta...................................
 
-Task 4 Answer the questions below
+### Task 4 Answer the questions below
 I'm hungry, I need the flag.
-
-#After downloading the task files, i used exiftool to check for metadata and got the flag
 ```
+After downloading the task files, i used exiftool to check for metadata and got the flag
+
 exiftool Findme.jpg 
 Owner Name                      : THM{3x1f_0r_3x17}
 ```
 
-Task 5  Erm......Magick
+### Task 5  Erm......Magick
 Huh, where is the flag? THM{wh173_fl46}
 
 Answer the questions below
@@ -41,7 +42,7 @@ It going to be over soon. Sleep my child.
 
 THM{500n3r_0r_l473r_17_15_0ur_7urn}
 ```
-Task 6  QRrrrr
+### Task 6  QRrrrr
 Such technology is quite reliable.
 
 Answer the questions below
@@ -51,7 +52,7 @@ Just download the file and I used google lens to get the flag
 
 THM{qr_m4k3_l1f3_345y}
 ```
-Task 7  Reverse it or read it?
+### Task 7  Reverse it or read it?
 Both works, it's all up to you.
 
 Answer the questions below
@@ -62,7 +63,7 @@ I run the strings command and got the flag
 THM{345y_f1nd_345y_60}
 
 ````
-Task 8  Another decoding stuff
+### Task 8  Another decoding stuff
 Can you decode it?
 
 3agrSy1CewF9v8ukcSkPSYm3oKUoByUpKG4L
@@ -76,7 +77,7 @@ This one, I had to look the write ups because I cant figure out which encoding w
 THM{17_h45_l3553r_l3773r5}
 
 ```
-Task 9  Left or right
+### Task 9  Left or right
 Left, right, left, right... Rot 13 is too mainstream. Solve this
 
 MAF{atbe_max_vtxltk}
@@ -89,7 +90,7 @@ this seems like a ceasar cipher since the format is for THM flag but that letter
 
 THM{hail_the_caesar}
 ```
-Task 10  Make a comment
+### Task 10  Make a comment
 No downloadable file, no ciphered or encoded text. Huh .......
 
 Answer the questions below
@@ -99,8 +100,7 @@ Hint says check the html
 
 THM{4lw4y5_ch3ck_7h3_c0m3mn7}
 ```
-
-Task 11
+### Task 11
 I accidentally messed up with this PNG file. Can you help me fix it? Thanks, ^^
 
 Answer the questions below
@@ -112,7 +112,7 @@ I look for multiple write ups so I could really understand the task. This is awe
 
 
 ```
-Task 12  Read it
+### Task 12  Read it
 Some hidden flag inside Tryhackme social account.
 Answer the questions below
 Did you found the hidden flag?
@@ -125,7 +125,7 @@ THM{50c14l_4cc0un7_15_p4r7_0f_051n7}
 
 ```
 
-Task 13  Spin my head
+### Task 13  Spin my head
 What is this?
 
 ++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>++++++++++++++.------------.+++++.>+++++++++++++++++++++++.<<++++++++++++++++++.>>-------------------.---------.++++++++++++++.++++++++++++.<++++++++++++++++++.+++++++++.<+++.+.>----.>++++.
@@ -133,10 +133,10 @@ What is this?
 Answer the questions below
 Can you decode it?
 ```
-I've encountered this language before, it is called Brainfuck so I just go to a brainfuck website decoder and got the flag
+I've encountered this language before, it is called Brainfuck so I used brainfuck website decoder and got the flag
 THM{0h_my_h34d}
 ```
-Task 14  An exclusive!
+### Task 14  An exclusive!
 Exclusive strings for everyone!
 
 S1: 44585d6b2368737c65252166234f20626d
@@ -148,10 +148,10 @@ Did you crack it? Feed me now!
 I spent a few hours also for this task, I've been trying to xor it in python but I am getting an error, but this time I am happy I learned about a new website that can process xor and output it to a different encoding
 
 I copied the variables to and gained the flag
-https://toolslick.com/math/bitwise/xor-calculator
+[xor-calculataor](https://toolslick.com/math/bitwise/xor-calculator)
 THM{3xclu51v3_0r}
 ```
-Task 15  Binary walk
+###### Task 15  Binary walk
 Please exfiltrate my file :)
 ```
 I had experiencec with binwalk before, so I just read again the man page and looked for the extract tag
@@ -174,7 +174,7 @@ THM{y0u_w4lk_m3_0u7}
 
 ```
 
-Task 16  Darkness
+###### Task 16  Darkness
 There is something lurking in the dark.
 
 Answer the questions below
@@ -186,7 +186,7 @@ THM{7h3r3_15_h0p3_1n_7h3_d4rkn355}
 ```
 
 
-Task 16  Darkness
+###### Task 16  Darkness
 There is something lurking in the dark.
 
 Answer the questions below
@@ -197,7 +197,7 @@ and by that I was able to get the flag
 
 THM{7h3r3_15_h0p3_1n_7h3_d4rkn355} 
 ```
-Task 17  A sounding QR
+###### Task 17  A sounding QR
 How good is your listening skill?
 
 P/S: The flag formatted as THM{Listened Flag}, the flag should be in All CAPS
@@ -209,7 +209,7 @@ This task is usually OSINT, after playing the sound I checked for the comments t
 THM{soundingqr}
 ```
 
-Task 18  Dig up the past
+###### Task 18  Dig up the past
 Sometimes we need a 'machine' to dig the past
 
 Targetted website: https://www.embeddedhacker.com/
@@ -221,7 +221,7 @@ Did you found my past?
 This task used wayback machine, and by walking through the web I am able to get the flag
 THM{ch3ck_th3_h4ckb4ck}
 ```
-Can you solve the following? By the way, I lost the key. Sorry >.<
+###### Task19? Can you solve the following? By the way, I lost the key. Sorry >.<
 
 MYKAHODTQ{RVG_YVGGK_FAL_WXF}
 
@@ -231,11 +231,11 @@ Answer the questions below
 The deciphered text
 
 ```
-First, I thought it was a cesar cipher again, after spending some time, I checked the hint and fount out it was a vigenere cipher, and by that I go to a website https://www.dcode.fr/vigenere-cipher that can decode and it I got the flag
+First, I thought it was a cesar cipher again, after spending some time, I checked the hint and fount out it was a vigenere cipher, and by that I go to a website [vigenere-cipher-decoder](https://www.dcode.fr/vigenere-cipher) that can decode and it I got the flag
 
 TRYHACKME{YOU_FOUND_THE_KEY}
 ```
-Task 20  Small bases
+###### Task 20  Small bases
 Decode the following text.
 
 581695969015253365094191591547859387620042736036246486373595515576333693
@@ -254,7 +254,7 @@ n = hex(dec)[2:]
 print(bytearray.fromhex((n)).decode())
 THM{17_ju57_4n_0rd1n4ry_b4535}
 ```
-Task 21  Read the packet
+###### Task 21  Read the packet
 I just hacked my neighbor's WiFi and try to capture some packet. He must be up to no good. Help me find it.
 Answer the questions below
 Did you captured my neighbor's flag?
