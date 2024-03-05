@@ -151,7 +151,7 @@ I copied the variables to and gained the flag
 [xor-calculataor](https://toolslick.com/math/bitwise/xor-calculator)
 THM{3xclu51v3_0r}
 ```
-###### Task 15  Binary walk
+### Task 15  Binary walk
 Please exfiltrate my file :)
 ```
 I had experiencec with binwalk before, so I just read again the man page and looked for the extract tag
@@ -174,7 +174,7 @@ THM{y0u_w4lk_m3_0u7}
 
 ```
 
-###### Task 16  Darkness
+### Task 16  Darkness
 There is something lurking in the dark.
 
 Answer the questions below
@@ -186,7 +186,7 @@ THM{7h3r3_15_h0p3_1n_7h3_d4rkn355}
 ```
 
 
-###### Task 16  Darkness
+### Task 16  Darkness
 There is something lurking in the dark.
 
 Answer the questions below
@@ -197,7 +197,7 @@ and by that I was able to get the flag
 
 THM{7h3r3_15_h0p3_1n_7h3_d4rkn355} 
 ```
-###### Task 17  A sounding QR
+### Task 17  A sounding QR
 How good is your listening skill?
 
 P/S: The flag formatted as THM{Listened Flag}, the flag should be in All CAPS
@@ -209,7 +209,7 @@ This task is usually OSINT, after playing the sound I checked for the comments t
 THM{soundingqr}
 ```
 
-###### Task 18  Dig up the past
+### Task 18  Dig up the past
 Sometimes we need a 'machine' to dig the past
 
 Targetted website: https://www.embeddedhacker.com/
@@ -221,7 +221,7 @@ Did you found my past?
 This task used wayback machine, and by walking through the web I am able to get the flag
 THM{ch3ck_th3_h4ckb4ck}
 ```
-###### Task19? Can you solve the following? By the way, I lost the key. Sorry >.<
+### Task19? Can you solve the following? By the way, I lost the key. Sorry >.<
 
 MYKAHODTQ{RVG_YVGGK_FAL_WXF}
 
@@ -235,7 +235,7 @@ First, I thought it was a cesar cipher again, after spending some time, I checke
 
 TRYHACKME{YOU_FOUND_THE_KEY}
 ```
-###### Task 20  Small bases
+### Task 20  Small bases
 Decode the following text.
 
 581695969015253365094191591547859387620042736036246486373595515576333693
@@ -243,9 +243,9 @@ Decode the following text.
 Answer the questions below
 What is the flag?
 
-```
-In this task, the hint said to decode it from dec to hex to ascii, with that in mind I create a python program that will decode the give numbers to me 
 
+In this task, the hint said to decode it from dec to hex to ascii, with that in mind I create a python program that will decode the give numbers to me 
+```
 #!/usr/local/bin/python3
 
 dec = int("581695969015253365094191591547859387620042736036246486373595515576333693")
@@ -254,7 +254,7 @@ n = hex(dec)[2:]
 print(bytearray.fromhex((n)).decode())
 THM{17_ju57_4n_0rd1n4ry_b4535}
 ```
-###### Task 21  Read the packet
+### Task 21  Read the packet
 I just hacked my neighbor's WiFi and try to capture some packet. He must be up to no good. Help me find it.
 Answer the questions below
 Did you captured my neighbor's flag?
