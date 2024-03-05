@@ -230,9 +230,9 @@ Flag format: TRYHACKME{FLAG IN ALL CAP}
 Answer the questions below
 The deciphered text
 
-```
-First, I thought it was a cesar cipher again, after spending some time, I checked the hint and fount out it was a vigenere cipher, and by that I go to a website [vigenere-cipher-decoder](https://www.dcode.fr/vigenere-cipher) that can decode and it I got the flag
 
+First, I thought it was a cesar cipher again, after spending some time, I checked the hint and fount out it was a vigenere cipher, and by that I go to a website [vigenere-cipher-decoder](https://www.dcode.fr/vigenere-cipher) that can decode and it I got the flag
+```
 TRYHACKME{YOU_FOUND_THE_KEY}
 ```
 ### Task 20  Small bases
