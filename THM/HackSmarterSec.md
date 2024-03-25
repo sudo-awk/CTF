@@ -1,4 +1,4 @@
-![image](https://github.com/sudo-awk/CTF/assets/106952099/8fd177d7-2bc0-4a65-893d-89c847bbc70e)Target :  
+Target :  
 http://10.10.182.162
 
 
