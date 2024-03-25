@@ -316,6 +316,9 @@ after I compiled it,, it would spit out an exe file... we just have to rename it
 
 ![image](https://github.com/sudo-awk/CTF/assets/106952099/4315ff3b-634d-45c8-9458-d15fcf353404)
 
+![image](https://github.com/sudo-awk/CTF/assets/106952099/7bdb9a82-8007-48c7-b4c1-7bb2062a4015)
+
+
 ```
 └─$ nc -nlvp 4444           
 listening on [any] 4444 ...
