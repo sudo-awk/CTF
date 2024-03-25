@@ -312,7 +312,7 @@ after I compiled it,, it would spit out an exe file... we just have to rename it
 
 ![image](https://github.com/sudo-awk/CTF/assets/106952099/c9e79855-5453-4e71-a336-a94975fc52c9)
 
-`sc start spoofer-scheduler` and then `sc stop spoofer-scheduler` while we wait for our listening shell
+I renamed the original file to spoofer-scheduler.exe.bak transferred my file the malicious executable with the same name..and then we will restart the service `sc start spoofer-scheduler` and then `sc stop spoofer-scheduler` while we wait for our listening shell
 
 ![image](https://github.com/sudo-awk/CTF/assets/106952099/4315ff3b-634d-45c8-9458-d15fcf353404)
 
